@@ -1,15 +1,9 @@
-import rclpy
-from rclpy.node import Node
+from launch import LaunchDescription            # container that groups launch actions
+from launch_ros.actions import Node             # action that starts one ROS 2 node
 
 
-class MyNode(Node):
-    def __init__(self):
-        super().__init__('my_node')
-        self.get_logger().info('Node started!')
-
-
-def main(args=None):
-    rclpy.init(args=args)
-    node = MyNode()
-    rclpy.spin(node)
-    rclpy.shutdown()
+def generate_launch_description():              # ros2 launch calls this function
+    return LaunchDescription([
+        Node(package='my_talker', executable='my_node', name='talker'),    # start the talker
+        Node(package='my_talker', executable='listener', name='listener'),  # start the listener
+    ])
