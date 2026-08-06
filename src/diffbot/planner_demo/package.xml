@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>planner_demo</name>
+  <version>0.1.0</version>
+  <description>DiffBot autonomous navigation demo — differential drive controller + RRT path planner</description>
+  <maintainer email="student@iitm.ac.in">Student</maintainer>
+  <license>Apache-2.0</license>
+  <depend>rclpy</depend>
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
